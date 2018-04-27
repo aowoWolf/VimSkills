@@ -1,4 +1,4 @@
-# gitSkills
+# VimSkills
 ## 寄存器
 ### :reg
 查看当前各个寄存器中的内容
