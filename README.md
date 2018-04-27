@@ -83,3 +83,54 @@ con==t==ent，当前光标在t位置上，使用```"ayiw```可以复制到a寄�
  ==W==|==正向==移动到下一字符串的开头
  ==E==|==正向==移动到当前字符串/下一字符串的结尾
  ==B==|==反向==移动到当前字符串/上一字符串的开头
+ ### 字符查找
+命令 | 用途
+|:---:|:---:|
+f{char}|正向移动到下一{char}所在之处
+F{char}|反向移动到下一{char}所在之处
+==t=={char}|正向移动到下一{char}所在之处的前一个字符串(==不包含{char}==)
+==T=={char}|反向移动到下一{char}所在之处的后一个字符串(==不包含{char}==)
+### 1.分隔符文本对象
+> 以==a==开头的文本对象可以想象成==around==或者==all==
+
+文本对象 | 选择区域
+|---|---|
+a)或ab|一对圆括号(parentheses)
+a}或aB|一对花括号{braces}
+a]|一对方括号[brackets]
+a>|一对尖括号<angle brackets>
+a'|一对单引号'single quotes'
+a" |一对双引号"double quotes"
+a\` |一对反引号 \`backticks\`
+at|一对XML标签\<xml\>tags\</xml\>
+
+例子:\<div>cli==c==k here\</div>,执行```citContent```
+------> \<div>conten==t==\</div>
+
+---
+
+> 以==i==开头的文本对象可以想象成==inside==，表示只处理文本中里面的
+内容，==不包括分隔符==
+
+文本对象 | 选择区域
+|---|---|
+i)或ib|一对圆括号(parentheses)
+i}或iB|一对花括号{braces}
+i]|一对方括号[brackets]
+i>|一对尖括号<angle brackets>
+i'|一对单引号'single quotes'
+i" |一对双引号"double quotes"
+i\` |一对反引号 \`backticks\`
+it|一对XML标签\<xml\>tags\</xml\>
+### 2.文本块对象
+
+文本对象 | 选择范围
+|---|---|
+iw|当前单词
+aw|当前单词及一个空格
+iW|当前字符串
+aW|当前字符串及一个空格
+is|当前句子
+as|当前句子及一个空格
+ip|当前段落
+ap|当前段落及一个空行
